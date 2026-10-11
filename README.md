@@ -47,5 +47,6 @@ npm test        # node --test, Node >= 20, no dependencies
 ```
 
 The suite is currently **flaky on `main`**: measured on our machine, `a staggered
-burst never exceeds the limit` fails 8 runs in 40, and the two other concurrency
-/ boundary tests fail on every run. See the issue tracker for the report.
+burst never exceeds the limit` fails 8 runs in 40 while the box is idle and 38 in
+60 while it is busy, and the two other concurrency / boundary tests fail on every
+run. See the issue tracker for the report.
