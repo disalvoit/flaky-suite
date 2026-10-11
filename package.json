@@ -1,0 +1,13 @@
+{
+  "name": "flaky-suite",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A persisted sliding-window rate limiter whose test suite fails intermittently on main.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

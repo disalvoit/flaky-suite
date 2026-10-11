@@ -1,0 +1,22 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # The suite is timing sensitive; run it five times so an intermittent
+      # failure shows up instead of hiding behind a lucky green run.
+      - name: npm test (five consecutive runs)
+        run: |
+          for i in 1 2 3 4 5; do
+            echo "== run $i =="
+            npm test
+          done
